@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import sprite from "../sprite.svg";
 
 const SwitchButton: React.FC = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
-  const [isMounted, setIsMounted] = useState(false);
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") ?? "light"
+  );
 
   const handleClick = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -17,16 +19,21 @@ const SwitchButton: React.FC = () => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
   return (
-    <button onClick={handleClick}>{theme === "light" ? "🌙" : "🌞"}</button>
+    <button
+      className="p-2 inline-block mr-2 text-secondary"
+      onClick={handleClick}
+    >
+      {theme === "light" ? (
+        <svg className="md:w-8 md:h-8 xs:w-7 xs:h-7   transition-all">
+          <use href={sprite + "#dark-mode"} />
+        </svg>
+      ) : (
+        <svg className="md:w-8 md:h-8 xs:w-7 xs:h-7   transition-all">
+          <use href={sprite + "#light-mode"} />
+        </svg>
+      )}
+    </button>
   );
 };
 

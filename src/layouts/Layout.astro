@@ -1,6 +1,12 @@
 ---
-import "@fontsource/poppins/300.css";
-import Navigation from "../components/Navigation.astro";
+import "@fontsource/poppins";
+import "@fontsource/poppins/200.css";
+// import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/800.css";
+import "@fontsource/poppins/900.css";
+
+import Nav from "../components/Nav";
+import Fallback from "../components/Fallback";
 
 export interface Props {
   title: string;
@@ -10,7 +16,7 @@ const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -19,19 +25,22 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="max-w-[1080px] mx-auto">
-    <Navigation />
-    <h1>i am whtdffd</h1>
-    <slot />
+  <body
+    class="dark:bg-primary bg-white bg-decore-light dark:bg-decore1 bg-no-repeat bg-pos lg:bg-40% bp:bg-80% xs:bg-100%"
+  >
+    <div class="md:max-w-[1080px] xs:w-4/5 mx-auto">
+      <Nav client:load />
+
+      <slot />
+    </div>
   </body>
 </html>
-<style is:global>
-  html {
-    background-color: #f6f6f6;
-  }
 
+<style is:global>
   body {
     font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    min-height: 100vh;
   }
 
   code {
@@ -39,3 +48,21 @@ const { title } = Astro.props;
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
 </style>
+<script>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  if (theme) window.localStorage.setItem("theme", theme);
+</script>
