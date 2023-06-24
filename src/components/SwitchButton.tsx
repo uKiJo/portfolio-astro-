@@ -24,6 +24,7 @@ const SwitchButton: React.FC = () => {
     <button
       className="p-2 inline-block mr-2 text-secondary"
       onClick={handleClick}
+      aria-label="dark-mode-button"
     >
       {theme === "light" ? (
         <Icon name="dark-mode" />
