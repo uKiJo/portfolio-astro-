@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 interface HeadingProps {
   children: string;
-  style: string;
+  style?: string;
 }
 
 const Heading: React.FC<HeadingProps> = ({ children, style }) => {

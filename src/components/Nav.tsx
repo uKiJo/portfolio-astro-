@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bp:pt-12 xs:pt-0 md:mb-24 xs:mb-12 relative bp:h-36 xs:h-16">
       {isSmallScreen && (
-        <div className="w-full flex justify-end p-6 fixed z-20 right-0">
+        <div className="w-full flex justify-end p-6 fixed z-20 right-0 bg">
           <button onClick={toggleOpen} className="space-y-1.5">
             <motion.span
               animate={{ rotateZ: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
