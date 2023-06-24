@@ -38,7 +38,11 @@ const Navbar: React.FC = () => {
     <nav className="bp:pt-12 xs:pt-0 md:mb-24 xs:mb-12 relative bp:h-36 xs:h-16">
       {isSmallScreen && (
         <div className="w-full flex justify-end p-6 fixed z-20 right-0 bg">
-          <button onClick={toggleOpen} className="space-y-1.5">
+          <button
+            onClick={toggleOpen}
+            className="space-y-1.5"
+            aria-label="menu-button"
+          >
             <motion.span
               animate={{ rotateZ: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
               className="block h-1 w-6 dark:bg-title_dark bg-title"
