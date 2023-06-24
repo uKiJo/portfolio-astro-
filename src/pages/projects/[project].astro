@@ -1,0 +1,23 @@
+---
+import { data } from "@data/data";
+import Layout from "src/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  // const allPosts = data.map(d => d.)
+  const ids = data.map((d) => d.id);
+
+  return ids.map((project) => {
+    return {
+      params: { project },
+      props: { posts: data },
+    };
+  });
+}
+
+const { project } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout title="project">
+  <div>{project}</div>
+</Layout>

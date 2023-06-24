@@ -1,8 +1,8 @@
-import sprite from "../sprite.svg";
+import sprite from "@assets/sprite.svg";
 
 const Fallback: React.FC = () => {
   return (
-    <div className="z-20 absolute left-0 dark:bg-primary bg-white h-screen w-full flex items-center justify-center">
+    <div className="z-20 absolute top-0 left-0 dark:bg-primary bg-white h-screen w-full flex items-center justify-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"

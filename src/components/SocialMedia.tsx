@@ -1,4 +1,6 @@
-import sprite from "../sprite.svg";
+import sprite from "@assets/sprite.svg";
+import Icon from "./Icon";
+
 // import "./style.css";
 
 const socialMediaIcons = ["facebook", "twitter", "linkedin", "github"];
@@ -13,9 +15,10 @@ const SocialMedia: React.FC = () => {
           href="#"
           aria-label={`${icon} account`}
         >
-          <svg className="md:w-8 md:h-8 xs:w-7 xs:h-7 text-primary dark:text-dark_text hover:text-secondary transition-all">
-            <use href={sprite + `#${icon}`} />
-          </svg>
+          <Icon
+            name={icon}
+            style="text-title dark:text-title_dark dark:hover:text-secondary"
+          />
         </a>
       ))}
     </>

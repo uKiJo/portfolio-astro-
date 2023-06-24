@@ -1,0 +1,10 @@
+---
+import Heading from "@components/Heading";
+import SkillsContent from "@components/SkillsContent";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout title="Skills">
+  <Heading style="dark:text-dark_text" client:only>Skills</Heading>
+  <SkillsContent client:load />
+</Layout>

@@ -9,15 +9,12 @@ const items = ["Home", "Projects", "Skills", "Contact"];
 
 const navbar = {
   open: {
-    // opacity: 0,
     height: 0,
   },
   closed: {
-    // opacity: 1,
     height: "100vh",
   },
   exit: {
-    // opacity: 0,
     height: 0,
   },
 };
@@ -38,17 +35,17 @@ const Navbar: React.FC = () => {
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bp:pt-12 xs:pt-0 md:mb-24 xs:mb-12 relative md:h-20 bp:h-36 xs:h-16">
+    <nav className="bp:pt-12 xs:pt-0 md:mb-24 xs:mb-12 relative bp:h-36 xs:h-16">
       {isSmallScreen && (
         <div className="w-full flex justify-end p-6 fixed z-20 right-0">
           <button onClick={toggleOpen} className="space-y-1.5">
             <motion.span
               animate={{ rotateZ: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
-              className="block h-1 w-6 dark:bg-dark_text bg-primary"
+              className="block h-1 w-6 dark:bg-title_dark bg-title"
             ></motion.span>
             <motion.span
               animate={{ width: isOpen ? 0 : 20 }}
-              className="block h-1 w-5 dark:bg-dark_text bg-primary"
+              className="block h-1 w-5 dark:bg-title_dark bg-title"
             ></motion.span>
             <motion.span
               animate={{
@@ -56,17 +53,16 @@ const Navbar: React.FC = () => {
                 width: isOpen ? 24 : 16,
                 y: isOpen ? -12 : 0,
               }}
-              className="block h-1 w-4 dark:bg-dark_text bg-primary"
+              className="block h-1 w-4 dark:bg-title_dark bg-title"
             ></motion.span>
           </button>
-          {/* <SwitchButton /> */}
         </div>
       )}
       {!isSmallScreen && (
         <div
           className={`flex bp:static xs:fixed xs:top-0 w-full xs:left-0 overflow-hidden md:flex-row xs:flex-col bp:h-fit xs:items-center md:justify-between xs:justify-center z-10 bp:bg-[transparent] bp:dark:bg-[transparent] xs:bg-dark_text xs:dark:bg-lprimary`}
         >
-          <div className="relative flex bp:flex-row xs:flex-col md:justify-start bp:justify-center font-bold text-primary dark:text-white w-full bp:p-0 xs:p-12">
+          <div className="relative flex bp:flex-row xs:flex-col md:justify-start bp:justify-center font-bold text-title dark:text-title_dark w-full bp:p-0 xs:p-12">
             {items.map((item, i) => (
               <a
                 onClick={toggleOpen}
@@ -91,21 +87,21 @@ const Navbar: React.FC = () => {
             initial={"open"}
             animate={"closed"}
             exit={"exit"}
-            className={`bp:hidden xs:flex bp:static xs:fixed xs:top-0 w-full xs:left-0 overflow-hidden md:flex-row xs:flex-col bp:h-fit xs:max-h-screen xs:items-center md:justify-between xs:justify-center z-10 bp:bg-[transparent] bp:dark:bg-[transparent] xs:bg-dark_text xs:dark:bg-lprimary`}
+            className={`bp:hidden xs:flex bp:static xs:fixed xs:top-0 w-full xs:left-0 overflow-hidden md:flex-row xs:flex-col bp:h-fit xs:max-h-screen xs:items-center md:justify-between xs:justify-center z-10 bp:bg-[transparent] bp:dark:bg-[transparent] xs:bg-[#D9D9D9] xs:dark:bg-lprimary`}
           >
-            <div className="flex bp:flex-row xs:flex-col grow md:justify-start xs:justify-center font-poppins font-semibold text-primary dark:text-white w-full bp:p-0 xs:p-12">
+            <div className="flex bp:flex-row xs:flex-col grow md:justify-start xs:justify-center font-poppins font-semibold text-title dark:text-title_dark  w-full bp:p-0 xs:p-12">
               {items.map((item, i) => (
                 <a
                   onClick={toggleOpen}
                   key={i}
-                  className="lg:first:pl-0 bp:p-4 xs:text-2xl bp:text-base xs:py-4 text-center"
+                  className="lg:first:pl-0 bp:p-4 xs:text-2xl bp:text-base xs:py-4 text-center dark:text-text"
                   href={`${item === "Home" ? "/" : `/${item.toLowerCase()}`} `}
                 >
                   {item}
                 </a>
               ))}
             </div>
-            <div className="flex items-center sm:grow pb-4">
+            <div className="flex items-center sm:grow py-4">
               <SwitchButton />
               <SocialMedia />
             </div>

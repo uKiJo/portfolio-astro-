@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import sprite from "../sprite.svg";
+import sprite from "@assets/sprite.svg";
+import Icon from "./Icon";
 
 const SwitchButton: React.FC = () => {
   const [theme, setTheme] = useState(
@@ -25,13 +26,9 @@ const SwitchButton: React.FC = () => {
       onClick={handleClick}
     >
       {theme === "light" ? (
-        <svg className="md:w-8 md:h-8 xs:w-7 xs:h-7   transition-all">
-          <use href={sprite + "#dark-mode"} />
-        </svg>
+        <Icon name="dark-mode" />
       ) : (
-        <svg className="md:w-8 md:h-8 xs:w-7 xs:h-7   transition-all">
-          <use href={sprite + "#light-mode"} />
-        </svg>
+        <Icon name="light-mode" />
       )}
     </button>
   );

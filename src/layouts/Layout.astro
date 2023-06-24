@@ -1,6 +1,7 @@
 ---
 import "@fontsource/poppins";
 import "@fontsource/poppins/200.css";
+import "@fontsource/poppins/600.css";
 // import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
@@ -26,10 +27,10 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body
-    class="dark:bg-primary bg-white bg-decore-light dark:bg-decore1 bg-no-repeat bg-pos lg:bg-40% bp:bg-80% xs:bg-100%"
+    class="dark:bg-primary bg-[#F2F2F2] bg-decore-light dark:bg-decore1 bg-no-repeat bg-pos lg:bg-40% bp:bg-80% xs:bg-100%"
   >
     <div class="md:max-w-[1080px] xs:w-4/5 mx-auto">
-      <Nav client:load />
+      <Nav client:idle />
 
       <slot />
     </div>
