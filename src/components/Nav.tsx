@@ -91,9 +91,9 @@ const Navbar: React.FC = () => {
             initial={"open"}
             animate={"closed"}
             exit={"exit"}
-            className={`bp:hidden xs:flex bp:static xs:fixed xs:top-0 w-full xs:left-0 overflow-hidden md:flex-row xs:flex-col bp:h-fit xs:max-h-screen xs:items-center md:justify-between xs:justify-center z-10 bp:bg-[transparent] bp:dark:bg-[transparent] xs:bg-[#D9D9D9] xs:dark:bg-lprimary`}
+            className={`bp:hidden xs:flex bp:static xs:fixed xs:top-0 w-full xs:left-0 overflow-hidden md:flex-row xs:flex-col bp:h-fit xs:h-screen xs:items-center md:justify-between xs:justify-center z-10 bp:bg-[transparent] bp:dark:bg-[transparent] xs:bg-[#D9D9D9] xs:dark:bg-lprimary`}
           >
-            <div className="flex bp:flex-row xs:flex-col grow md:justify-start xs:justify-center font-poppins font-semibold text-title dark:text-title_dark  w-full bp:p-0 xs:p-12">
+            <div className="flex bp:flex-row xs:flex-col md:justify-start xs:justify-center font-poppins font-semibold text-title dark:text-title_dark  w-full bp:p-0 xs:p-12">
               {items.map((item, i) => (
                 <a
                   onClick={toggleOpen}
