@@ -5,6 +5,6 @@ import ProjectsContent from "@components/ProjectsContent";
 ---
 
 <Layout title="Projects">
-  <Heading style="dark:text-dark_text " client:only>Projects</Heading>
-  <ProjectsContent client:load />
+  <Heading style="dark:text-dark_text " client:only="react">Projects</Heading>
+  <ProjectsContent client:only="react" />
 </Layout>

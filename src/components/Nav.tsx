@@ -30,6 +30,7 @@ const Navbar: React.FC = () => {
 
   if (!isMounted) {
     return <Fallback />;
+    // return null;
   }
 
   const toggleOpen = () => setIsOpen(!isOpen);

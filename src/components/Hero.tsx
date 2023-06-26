@@ -24,14 +24,14 @@ const Hero: React.FC = () => {
               Hi, I am Youn<span className="text-secondary">e</span>s
             </h1>
           </div>
-          <div className="text opacity-0 translate-x-6">
+          <div className="text">
             <p className="lg:text-[22px] lg:leading-8 md:text-xl xs:text-base lg:max-w-md md:max-w-sm font-normal dark:text-paragraph_dark md:mb-10 xs:mb-6 text-paragraph">
               Welcome to my frontend development portfolio, where i bring ideas
               to life by transforming them into visually stunning apps. Let's
               collaborate and build something amazing together!
             </p>
           </div>
-          <div className="text opacity-0 translate-x-6">
+          <div className="text">
             <CustomButton url="/contact">Contact me</CustomButton>
           </div>
         </div>

@@ -6,8 +6,8 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Abdat Mohamed Younes">
   <section class="pb-10">
-    <Hero client:load />
-    <LatestWork client:load />
+    <Hero client:only="react" />
+    <LatestWork client:only="react" />
   </section>
 </Layout>
 

@@ -5,6 +5,6 @@ import ContactContent from "@components/ContactContent";
 ---
 
 <Layout title="Contact">
-  <Heading>Get in touch</Heading>
-  <ContactContent />
+  <Heading client:only="react">Get in touch</Heading>
+  <ContactContent client:only="react" />
 </Layout>
