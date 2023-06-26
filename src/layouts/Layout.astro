@@ -25,6 +25,27 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script is:inline>
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+
+      if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+      if (theme) window.localStorage.setItem("theme", theme);
+    </script>
   </head>
   <body
     class="dark:bg-primary bg-[#F2F2F2] bg-decore-light dark:bg-decore1 bg-no-repeat bg-pos lg:bg-40% bp:bg-80% xs:bg-100%"
@@ -32,7 +53,7 @@ const { title } = Astro.props;
     <div class="md:max-w-[1080px] xs:w-4/5 mx-auto">
       <!-- <Fallback /> -->
 
-      <Nav client:idle />
+      <Nav client:only="react" />
       <slot />
     </div>
   </body>
@@ -50,22 +71,3 @@ const { title } = Astro.props;
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
 </style>
-
-<script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
-
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
-  }
-  if (theme) window.localStorage.setItem("theme", theme);
-</script>
