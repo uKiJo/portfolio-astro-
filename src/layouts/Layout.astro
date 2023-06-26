@@ -53,7 +53,7 @@ const { title } = Astro.props;
     <div class="md:max-w-[1080px] xs:w-4/5 mx-auto">
       <!-- <Fallback /> -->
 
-      <Nav client:only="react" />
+      <Nav client:load />
       <slot />
     </div>
   </body>
