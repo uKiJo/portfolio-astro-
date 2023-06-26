@@ -7,13 +7,13 @@ import useAnimation from "src/hooks/useAnimation";
 
 const Hero: React.FC = () => {
   // useHeroAnimation();
-  useStaggerAnimation(
-    ".text",
-    { x: [20, 0], opacity: [0, 1] },
-    { duration: 1 }
-  );
+  // useStaggerAnimation(
+  //   ".text",
+  //   { x: [20, 0], opacity: [0, 1] },
+  //   { duration: 1 }
+  // );
 
-  useAnimation(".hero-image", { opacity: [0, 1] }, { delay: 1 });
+  // useAnimation(".hero-image", { opacity: [0, 1] }, { delay: 1 });
 
   return (
     <header className="mb-24">

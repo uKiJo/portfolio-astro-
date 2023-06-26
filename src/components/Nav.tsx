@@ -22,16 +22,16 @@ const navbar = {
 const Navbar: React.FC = () => {
   const isSmallScreen = useMediaQuery({ query: "(max-width: 500px)" });
   const [isOpen, setIsOpen] = useState(false);
-  // const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // useEffect(() => {
-  //   setIsMounted(true);
-  // }, []);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-  // if (!isMounted) {
-  //   return <Fallback />;
-  //   // return null;
-  // }
+  if (!isMounted) {
+    return <Fallback />;
+    // return null;
+  }
 
   const toggleOpen = () => setIsOpen(!isOpen);
 
