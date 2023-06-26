@@ -22,7 +22,7 @@ const SwitchButton: React.FC = () => {
 
   return (
     <button
-      className="p-2 inline-block mr-2 text-secondary"
+      className="p-2 inline-block mr-2 dark:text-secondary"
       onClick={handleClick}
       aria-label="dark-mode-button"
     >

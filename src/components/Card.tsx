@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({
   }, []);
 
   return (
-    <div className="card md:w-64 md:h-96 xs:w-56 bp:p-6 xs:p-4 flex flex-col shadow-card3 hover:shadow-card5 dark:hover:shadow-none  rounded-md overflow-hidden bg-grey dark:bg-lprimary cursor-pointer bg-[#fff]">
+    <div className="card md:w-64 md:h-96 xs:w-56 bp:p-6 xs:p-4 flex flex-col hover:shadow-card dark:hover:shadow-none rounded-md overflow-hidden bg-grey dark:bg-lprimary cursor-pointer bg-[#fff] transition">
       <div className="rounded-lg items-center">
         <div className="p-4 dark:bg-transparent dark:bg-gradient-180 dark:from-transparent dark:to-lgrey bg-gradient-180 from-transparent to-gray-100 rounded-lg dark:border-0 ">
           <img className="h-2/3 rounded " src={image} alt={title} />

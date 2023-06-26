@@ -27,10 +27,7 @@ const SkillsContent: React.FC = () => {
           matters is that we solve the problem the right way using the right
           tools. As a frontend developer, i mainly use the stack stated below:
         </Description>
-        <div
-          // style={props}
-          className="flex flex-wrap gap-4 bp:justify-start xs:justify-center"
-        >
+        <div className="flex flex-wrap gap-4 bp:justify-start xs:justify-center">
           {technologies.map((tech) => (
             <div
               key={tech.id}
@@ -41,15 +38,18 @@ const SkillsContent: React.FC = () => {
                   <Tooltip.Trigger aria-label={tech.name}>
                     <div className="md:p-4 xs:p-3 dark:bg-lprimary bg-white dark:shadow-none shadow-card4 rounded">
                       <Icon
-                        name={tech.name}
+                        name={tech.iconId}
                         style="text-paragraph dark:text-paragraph_dark"
                       />
                     </div>
                   </Tooltip.Trigger>
                   <Tooltip.Portal>
-                    <Tooltip.Content className="TooltipContent dark:bg-txt bg-white">
+                    <Tooltip.Content
+                      avoidCollisions={true}
+                      className="TooltipContent dark:bg-lprimary bg-white dark:text-title_dark p-2 rounded font-normal border-title_dark border-t shadow-card transition"
+                    >
                       {tech.name}
-                      <Tooltip.Arrow className="dark:fill-txt fill-white" />
+                      <Tooltip.Arrow className="dark:fill-lprimary fill-white " />
                     </Tooltip.Content>
                   </Tooltip.Portal>
                 </Tooltip.Root>
