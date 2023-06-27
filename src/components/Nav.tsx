@@ -22,16 +22,6 @@ const navbar = {
 const Navbar: React.FC = () => {
   const isSmallScreen = useMediaQuery({ query: "(max-width: 500px)" });
   const [isOpen, setIsOpen] = useState(false);
-  // const [isMounted, setIsMounted] = useState(false);
-
-  // useEffect(() => {
-  //   setIsMounted(true);
-  // }, []);
-
-  // if (!isMounted) {
-  //   return <Fallback />;
-  //   // return null;
-  // }
 
   const toggleOpen = () => setIsOpen(!isOpen);
 
@@ -84,28 +74,6 @@ const Navbar: React.FC = () => {
         </div>
       )}
 
-      {/* {!isSmallScreen && (
-        <div
-          className={`flex bp:static xs:fixed xs:top-0 w-full xs:left-0 overflow-hidden md:flex-row xs:flex-col bp:h-fit xs:items-center md:justify-between xs:justify-center z-10 bp:bg-[transparent] bp:dark:bg-[transparent] xs:bg-dark_text xs:dark:bg-lprimary`}
-        >
-          <div className="relative flex bp:flex-row xs:flex-col md:justify-start bp:justify-center font-bold text-title dark:text-title_dark w-full bp:p-0 xs:p-12">
-            {items.map((item, i) => (
-              <a
-                onClick={toggleOpen}
-                key={i}
-                className="lg:first:pl-0 bp:p-4 xs:text-2xl bp:text-base xs:font-semibold xs:pb-4 text-center"
-                href={`${item === "Home" ? "/" : `/${item.toLowerCase()}`} `}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-          <div className="flex items-center sm:grow ">
-            <SwitchButton />
-            <SocialMedia />
-          </div>
-        </div>
-      )} */}
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
