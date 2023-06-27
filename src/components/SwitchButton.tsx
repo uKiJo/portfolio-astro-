@@ -3,9 +3,8 @@ import sprite from "@assets/sprite.svg";
 import Icon from "./Icon";
 
 const SwitchButton: React.FC = () => {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem("theme") ?? "light"
-  );
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
+  const [isMounted, setIsMounted] = useState(false);
 
   const handleClick = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -19,6 +18,15 @@ const SwitchButton: React.FC = () => {
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    // return <Fallback />;
+    return null;
+  }
 
   return (
     <button
