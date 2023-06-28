@@ -55,10 +55,18 @@ const Card: React.FC<CardProps> = ({
         </div>
         <div className="h-[1px] w-full bg-lgrey opacity-50 mb-4"></div>
         <div className="flex">
-          <a className="mr-4 cursor-pointer hover:text-secondary" href={url}>
+          <a
+            className="mr-4 cursor-pointer hover:text-secondary"
+            href={url}
+            aria-label="repository link"
+          >
             <Icon name="external-link" style="md:w-6 md:h-6 xs:w-5 xs:h-5" />
           </a>
-          <a className="cursor-pointer hover:text-secondary" href={repo}>
+          <a
+            className="cursor-pointer hover:text-secondary"
+            href={repo}
+            aria-label="demo link"
+          >
             <Icon name="github" style="md:w-6 md:h-6 xs:w-5 xs:h-5" />
           </a>
         </div>
