@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import sprite from "@assets/sprite.svg";
 import Icon from "./Icon";
+import { usePreventServerClientMismatch } from "src/hooks/usePreventServerClientMismatch";
 
 const SwitchButton: React.FC = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = usePreventServerClientMismatch();
 
   const handleClick = () => {
     setTheme(theme === "light" ? "dark" : "light");
@@ -18,10 +18,6 @@ const SwitchButton: React.FC = () => {
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   if (!isMounted) {
     // return <Fallback />;
