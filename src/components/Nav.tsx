@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
 
   if (!isMounted) {
     // return <Fallback />;
-    return null;
+    return <div className="md:mb-24 bp:h-36 xs:mb-12 xs:h-16"></div>;
   }
 
   return (
