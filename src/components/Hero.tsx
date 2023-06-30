@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
 
   return (
     <header className="mb-24">
-      <div className="flex md:flex-row xs:flex-col justify-between items-center h-min font-poppins text-primary dark:text-white">
+      <div className="flex md:flex-row xs:flex-col justify-between items-center font-poppins text-primary dark:text-white">
         <div>
           <div className="text">
             <h1 className="lg:text-6xl md:text-[44px] sm:text-4xl xs:text-3xl font-extrabold leading-14 md:mb-10 xs:mb-6">
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
             <CustomButton url="/contact">Contact me</CustomButton>
           </div>
         </div>
-        <div className="lg:w-[350px] md:w-72 xs:w-60 xs:mt-12 hero-image">
+        <div className="lg:w-[350px] md:w-72 xs:w-60 bp:mt-0 xs:mt-12 hero-image">
           <img src={illustration} alt="me" width="100%" height="100%" />
         </div>
       </div>
