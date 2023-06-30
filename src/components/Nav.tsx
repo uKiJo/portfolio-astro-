@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { hydrateRoot } from "react-dom/client";
 import { useMediaQuery } from "react-responsive";
 import SwitchButton from "./SwitchButton";
 import SocialMedia from "./SocialMedia";
@@ -29,8 +30,8 @@ const Navbar: React.FC = () => {
   const toggleOpen = () => setIsOpen(!isOpen);
 
   if (!isMounted) {
-    return <Fallback />;
-    // return <div className="md:mb-24 bp:h-36 xs:mb-12 xs:h-16"></div>;
+    // return <Fallback />;
+    return <div className="md:mb-24 bp:h-36 xs:mb-12 xs:h-16"></div>;
   }
 
   return (
