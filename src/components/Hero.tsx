@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
       <div className="flex md:flex-row xs:flex-col justify-between items-center h-min font-poppins text-primary dark:text-white">
         <div>
           <div className="text">
-            <h1 className="lg:text-6xl md:text-[44px] sm:text-4xl xs:text-3xl font-bold leading-14 md:mb-10 xs:mb-6">
+            <h1 className="lg:text-6xl md:text-[44px] sm:text-4xl xs:text-3xl font-extrabold leading-14 md:mb-10 xs:mb-6">
               Hi, I am Youn<span className="text-secondary">e</span>s
             </h1>
           </div>

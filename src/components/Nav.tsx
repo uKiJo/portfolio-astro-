@@ -27,10 +27,10 @@ const Navbar: React.FC = () => {
 
   const toggleOpen = () => setIsOpen(!isOpen);
 
-  if (!isMounted) {
-    // return <Fallback />;
-    return <div className="md:mb-24 bp:h-36 xs:mb-12 xs:h-16"></div>;
-  }
+  // if (!isMounted) {
+  //   // return <Fallback />;
+  //   return <div className="md:mb-24 bp:h-36 xs:mb-12 xs:h-16"></div>;
+  // }
 
   return (
     <nav className="bp:pt-12 xs:pt-0 md:mb-24 xs:mb-12 relative bp:h-36 xs:h-16">
