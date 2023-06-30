@@ -1,4 +1,5 @@
-import jadooSmall from "@assets/league-app-200p.png";
+import jadooThumb from "@assets/jadoo_thumb.png";
+import leagueThumb from "@assets/league-app thumb.png";
 import jadoo from "@assets/jadoo.png";
 import leagueApp from "@assets/league-app.png";
 
@@ -7,6 +8,7 @@ export const data = [
     id: 0,
     title: "Jadoo Landing Page",
     image: jadoo,
+    thumbImage: jadooThumb,
     description: "Landing page for Jadoo, a travel agency",
     isFinished: true,
     url: "https://jadoo-chi.vercel.app/",
@@ -16,6 +18,7 @@ export const data = [
     id: 1,
     title: "Football League App",
     image: leagueApp,
+    thumbImage: leagueThumb,
     description: "You can create a football league within few clicks",
     isFinished: false,
     url: "#",

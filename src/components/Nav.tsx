@@ -5,6 +5,7 @@ import SwitchButton from "./SwitchButton";
 import SocialMedia from "./SocialMedia";
 import Fallback from "./Fallback";
 import { usePreventServerClientMismatch } from "src/hooks/usePreventServerClientMismatch";
+import MenuButton from "./MenuButton";
 
 const items = ["Home", "Projects", "Skills", "Contact"];
 
@@ -28,36 +29,38 @@ const Navbar: React.FC = () => {
   const toggleOpen = () => setIsOpen(!isOpen);
 
   if (!isMounted) {
-    // return <Fallback />;
-    return <div className="md:mb-24 bp:h-36 xs:mb-12 xs:h-16"></div>;
+    return <Fallback />;
+    // return <div className="md:mb-24 bp:h-36 xs:mb-12 xs:h-16"></div>;
   }
 
   return (
-    <nav className="bp:pt-12 xs:pt-0 md:mb-24 xs:mb-12 relative bp:h-36 xs:h-16">
+    <nav className="bp:pt-12 xs:pt-0 md:mb-24 xs:mb-12 bp:static xs:relative bp:h-36 xs:h-16">
       <div className="w-full bp:hidden xs:flex justify-end p-6 fixed z-20 right-0 bg">
-        <button
-          onClick={toggleOpen}
-          className="space-y-1.5"
-          aria-label="menu-button"
-        >
-          <motion.span
-            animate={{ rotateZ: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
-            className="block h-1 w-6 dark:bg-title_dark bg-title"
-          ></motion.span>
-          <motion.span
-            animate={{ width: isOpen ? 0 : 20 }}
-            className="block h-1 w-5 dark:bg-title_dark bg-title"
-          ></motion.span>
-          <motion.span
-            animate={{
-              rotateZ: isOpen ? -45 : 0,
-              width: isOpen ? 24 : 16,
-              y: isOpen ? -12 : 0,
-            }}
-            className="block h-1 w-4 dark:bg-title_dark bg-title"
-          ></motion.span>
-        </button>
+        <MenuButton isOpen={isOpen} toggleOpen={toggleOpen} />
       </div>
+      {/* <button
+        onClick={toggleOpen}
+        className="space-y-1.5 bp:hidden absolute z-20 top-5 right-0"
+        aria-label="menu-button"
+      >
+        <motion.span
+          animate={{ rotateZ: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
+          className="block h-1 w-6 dark:bg-title_dark bg-title"
+        ></motion.span>
+        <motion.span
+          animate={{ width: isOpen ? 0 : 20 }}
+          className="block h-1 w-5 dark:bg-title_dark bg-title"
+        ></motion.span>
+        <motion.span
+          animate={{
+            rotateZ: isOpen ? -45 : 0,
+            width: isOpen ? 24 : 16,
+            y: isOpen ? -12 : 0,
+          }}
+          className="block h-1 w-4 dark:bg-title_dark bg-title"
+        ></motion.span>
+      </button> */}
+
       {!isSmallScreen && (
         <div
           className={`bp:static bp:flex xs:hidden xs:fixed xs:top-0 w-full xs:left-0 overflow-hidden md:flex-row xs:flex-col bp:h-fit xs:items-center md:justify-between xs:justify-center z-10 bp:bg-[transparent] bp:dark:bg-[transparent] xs:bg-dark_text xs:dark:bg-lprimary`}
@@ -80,6 +83,7 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       )}
+
       {/* {isSmallScreen && ( */}
       {/* )} */}
 
