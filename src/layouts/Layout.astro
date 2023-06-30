@@ -25,6 +25,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
     <style>
       /* devanagari */
       @font-face {
@@ -299,7 +300,7 @@ const { title } = Astro.props;
     class="dark:bg-primary bg-[#F2F2F2] bg-decore-light dark:bg-decore1 bg-no-repeat bg-pos lg:bg-40% bp:bg-80% xs:bg-100%"
   >
     <div class="md:max-w-[1080px] xs:w-4/5 mx-auto">
-      <Nav client:idle />
+      <Nav client:load />
       <slot />
     </div>
   </body>
