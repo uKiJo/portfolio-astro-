@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { hydrateRoot } from "react-dom/client";
 import { useMediaQuery } from "react-responsive";
 import SwitchButton from "./SwitchButton";
 import SocialMedia from "./SocialMedia";
@@ -39,28 +38,6 @@ const Navbar: React.FC = () => {
       <div className="w-full bp:hidden xs:flex justify-end p-6 fixed z-20 right-0 bg">
         <MenuButton isOpen={isOpen} toggleOpen={toggleOpen} />
       </div>
-      {/* <button
-        onClick={toggleOpen}
-        className="space-y-1.5 bp:hidden absolute z-20 top-5 right-0"
-        aria-label="menu-button"
-      >
-        <motion.span
-          animate={{ rotateZ: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
-          className="block h-1 w-6 dark:bg-title_dark bg-title"
-        ></motion.span>
-        <motion.span
-          animate={{ width: isOpen ? 0 : 20 }}
-          className="block h-1 w-5 dark:bg-title_dark bg-title"
-        ></motion.span>
-        <motion.span
-          animate={{
-            rotateZ: isOpen ? -45 : 0,
-            width: isOpen ? 24 : 16,
-            y: isOpen ? -12 : 0,
-          }}
-          className="block h-1 w-4 dark:bg-title_dark bg-title"
-        ></motion.span>
-      </button> */}
 
       {!isSmallScreen && (
         <div
@@ -84,9 +61,6 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       )}
-
-      {/* {isSmallScreen && ( */}
-      {/* )} */}
 
       <AnimatePresence initial={false}>
         {isOpen && (
