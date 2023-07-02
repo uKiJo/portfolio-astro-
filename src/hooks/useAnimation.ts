@@ -1,5 +1,5 @@
 import { animate, DynamicAnimationOptions } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 
 interface AnimateObject {
   [name: string]: number[] | string[];
@@ -15,7 +15,7 @@ const useAnimation = (
   animateObj: AnimateObject,
   config?: DynamicAnimationOptions
 ) => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     animate(element, animateObj, { ...config });
   }, []);
 };

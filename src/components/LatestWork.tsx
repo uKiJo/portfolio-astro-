@@ -1,12 +1,12 @@
 import { useAnimate, animate } from "framer-motion";
 import Thumbnail from "./Thumbnails";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { data as projects } from "@data/data";
 
 const LatestWork: React.FC = () => {
   // const [scope, animate] = useAnimate();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     animate(".latest", { opacity: [0, 1] }, { delay: 1 });
   }, []);
 

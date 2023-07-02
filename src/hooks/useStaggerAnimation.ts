@@ -1,5 +1,5 @@
 import { animate, stagger, cubicBezier, DynamicOption } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 
 interface AnimateObject {
   [name: string]: number[] | string[];
@@ -17,7 +17,7 @@ const useStaggerAnimation = (
   animateObj: AnimateObject,
   config?: ConfigObject
 ) => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     animate(element, animateObj, {
       delay: staggerMenuItems,
       ease: easing,

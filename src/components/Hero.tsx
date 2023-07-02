@@ -1,12 +1,17 @@
-// import { useHeroAnimation } from "../hooks/useHeroAnimation";
 import useStaggerAnimation from "src/hooks/useStaggerAnimation";
 
 import illustration from "../../public/illustration.svg";
 import CustomButton from "./Button";
 import useAnimation from "src/hooks/useAnimation";
+import { usePreventServerClientMismatch } from "src/hooks/usePreventServerClientMismatch";
 
 const Hero: React.FC = () => {
-  // useHeroAnimation();
+  // const isMounted = usePreventServerClientMismatch();
+  // // useHeroAnimation();
+  // if (isMounted) {
+  //   // return <Fallback />;
+  //   return null;
+  // }
   useStaggerAnimation(
     ".text",
     { x: [20, 0], opacity: [0, 1] },
