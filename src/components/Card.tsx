@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({
   url,
   repo,
 }) => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     animate(
       ".card",
       { y: [20, 0], opacity: [0, 1] },
